@@ -1,10 +1,10 @@
 import { Connection, PublicKey } from "@solana/web3.js";
 import { getDomainKey, NameRegistryState, getAllDomains, performReverseLookup } from "@bonfida/spl-name-service";
 
-const QUICKNODE_RPC = 'https://mainnet.helius-rpc.com/?api-key=81feba64-4e1e-47e6-a27b-d347b7b41ed5';//replace with your HTTP Provider from https://www.quicknode.com/endpoints
+const QUICKNODE_RPC = '';//replace with your HTTP Provider from https://www.quicknode.com/endpoints
 const SOLANA_CONNECTION = new Connection(QUICKNODE_RPC);
 
-async function getPublicKeyFromSolDomain(domain: string): Promise<string> {
+export async function getPublicKeyFromSolDomain(domain: string): Promise<string> {
     const { pubkey } = await getDomainKey(domain);
     try {
         const owner = (await NameRegistryState.retrieve(SOLANA_CONNECTION, pubkey)).registry.owner.toBase58();
@@ -32,3 +32,4 @@ const DOMAIN_TO_SEARCH = 'mrrandom';
 
 getPublicKeyFromSolDomain(DOMAIN_TO_SEARCH);
 // getSolDomainsFromPublicKey(WALLET_TO_SEARCH);
+

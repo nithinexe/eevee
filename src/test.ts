@@ -5,8 +5,8 @@ import { MemorySaver } from '@langchain/langgraph';
 import { HumanMessage } from '@langchain/core/messages';
 import * as readline from 'readline';
 import * as dotenv from 'dotenv';
-import { SolanaAgentKit } from '../solana-agent-kit/src';
-import {createSolanaTools} from '../solana-agent-kit/src/langchain';
+import { SolanaAgentKit } from '../../solana-agent-kit/src';
+import {createSolanaTools} from '../../solana-agent-kit/src/langchain';
 
 dotenv.config();
 
