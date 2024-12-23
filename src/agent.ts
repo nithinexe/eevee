@@ -2,10 +2,13 @@ import { SolanaAgentKit, createSolanaTools } from 'solana-agent-kit';
 import { ChatOpenAI } from '@langchain/openai';
 import { createReactAgent } from '@langchain/langgraph/prebuilt';
 import { MemorySaver } from '@langchain/langgraph';
-import * as dotenv from 'dotenv';
+// import * as dotenv from 'dotenv';
 import { PublicKey } from '@solana/web3.js';
 
-dotenv.config();
+import * as dotenv from 'dotenv';
+dotenv.config({ path: '../.env' });
+
+// dotenv.config();
 
 export async function initializeAgent() {
   const llm = new ChatOpenAI({

@@ -10,6 +10,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@bonfida/spl-name-service": "^3.0.7",
+    "@langchain/anthropic": "^0.3.11",
     "@langchain/core": "^0.3.26",
     "@langchain/langgraph": "^0.2.34",
     "@langchain/openai": "^0.3.16",
